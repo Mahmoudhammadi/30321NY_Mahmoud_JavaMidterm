@@ -1,5 +1,6 @@
 package string.problems;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Palindrome {
@@ -28,10 +29,10 @@ public class Palindrome {
     }
     public static boolean isPalindrome(String string) {
         String reverse = "";
-        for (int i = 0; i < string.length(); i++) {
-            reverse = string.charAt(i) + reverse;
+        for (int i = 0; i < string.toLowerCase().length(); i++) {
+            reverse = string.charAt(i) + reverse.toLowerCase();
         }
-        if (string.equals(reverse)) {
+        if (string.toLowerCase().equals(reverse)) {
             return true;
         } else
             return false;

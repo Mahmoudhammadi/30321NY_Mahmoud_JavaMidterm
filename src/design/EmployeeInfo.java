@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public class EmployeeInfo extends AbstractClass implements Employee    {
 
     /*
     This class should implement the Employee interface. You can do that by directly implementing it, however you must
@@ -16,26 +16,71 @@ public class EmployeeInfo {
         - Implement nested class below (DateConversion)
         - Use Exception Handling
      */
+     // polymorphism (methods overloading)
+    @Override
+    public void transportationServices() {
+        super.transportationServices();
+    }
+
+    @Override
+    public int employeeId() {
+        return 0;
+    }
+
+    @Override
+    public String employeeName() {
+        return null;
+    }
+
+    @Override
+    public void assignDepartment() {
+
+    }
+
+    @Override
+    public int calculateSalary() {
+        return 0;
+    }
+
+    @Override
+    public boolean benefitLayout() {
+
+        return false;
+    }
 
     /*
      * Make sure to declare and use static, non-static & final fields
      */
+    int employeeId;
     static String companyName;
+    private String name;
+    static  int salary ;
+    static int performance;
 
-    /*
-     You must implement the logic for below 2 methods and
-        following 2 methods are prototype as well for other methods need to be design,
-        as you will come up with the new ideas.
-     */
+    //Encapsulation (Getter &  Setter )
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /*
      You must have/use multiple constructors
      */
-    public EmployeeInfo(int employeeId) {
+    public EmployeeInfo(){
+
+    }
+    public EmployeeInfo(int salary,int employeeId) {
+        this.salary= salary;
 
     }
 
-    public EmployeeInfo(String name, int employeeId) {
+    public EmployeeInfo(String name, String companyName) {
+        this.name=name;
+        this.companyName=companyName;
 
     }
 
@@ -47,10 +92,33 @@ public class EmployeeInfo {
             You can set arbitrary number for performance, so you probably need to send 2 arguments.
      *
      */
-    public static int calculateEmployeeBonus(int numberOfYearsWithCompany) {
-        int total = 0;
+    public static double calculateEmployeeBonus(int numberOfYearsWithCompany) {
+        double total=0;
+        double bonus;
+
+        if(performance >= 7){
+            bonus =(int) (salary * (.1));
+            System.out.println("Employees bonus best performance = $"+bonus);
+
+            if (numberOfYearsWithCompany >= 3){
+                total = salary + bonus;
+            }
+            System.out.println("total with best performance is: "+total);
+
+        }else{
+            bonus = salary*8;
+            System.out.println("Employees bonus average performance = $"+bonus);}
+
+        if (numberOfYearsWithCompany < 5){
+            total = salary + bonus;
+        }
+        System.out.println(" total with average performance is: "+total);
+
         return total;
+
     }
+
+
 
     /*
      You need to implement the logic of this method as such:
@@ -59,8 +127,9 @@ public class EmployeeInfo {
             Example: Employee will receive 5% of salary as pension for every year they are with the company
      *
      */
-    public static int calculateEmployeePension() {
-        int total = 0;
+    public static double calculateEmployeePension() {
+        double totalPension;
+        double  total = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter start date in format (example: May,2015): ");
         String joiningDate = sc.nextLine();
@@ -71,8 +140,21 @@ public class EmployeeInfo {
 
         // Figure out how to extract the number of years the employee has been with the company, using the above 2 dates
         // Calculate pension
+        int StartingDate=2019;
+        int CurrentDate=2021;
+        if (CurrentDate-StartingDate==1){
+            totalPension = salary * .04;
 
-        return total;
+
+        }else if (CurrentDate - StartingDate >= 2 ){
+            totalPension = salary * .1;
+
+        }else totalPension =0;
+
+
+        System.out.println("this is pension total salary"+totalPension);
+        return totalPension;
+
     }
 
     private static class DateConversion {

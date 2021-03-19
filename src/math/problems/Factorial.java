@@ -9,7 +9,19 @@ public class Factorial {
      */
 
     public static void main(String[] args) {
+        num();
 
 
+
+    }
+    public static int num () {
+        int a = 5;
+        int b = 1;
+        for (int i = 1; i <= 5; i++) {
+            b *=  i;
+            System.out.println(b);
+
+        }
+        return b;
     }
 }

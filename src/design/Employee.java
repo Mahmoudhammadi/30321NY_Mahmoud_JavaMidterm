@@ -1,6 +1,6 @@
 package design;
 
-public interface Employee {
+public interface Employee  {
 	
 	/*
 	Employee is an Interface which contains multiple unimplemented methods.
@@ -26,6 +26,6 @@ public interface Employee {
     int calculateSalary();
 
     //employee benefit
-    void benefitLayout();
+    boolean benefitLayout();
 
 }

@@ -9,6 +9,18 @@ public class Fibonacci {
      */
 
     public static void main(String[] args) {
+        int num=40;
+        int a=0;
+        int b=1;
+        for(int i=1;i<=num;i++){
+            int sum=a+b;
+            System.out.println(a);
+            a=b;
+            b=sum;
+
+
+
+        }
 
 
     }

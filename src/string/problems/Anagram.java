@@ -29,6 +29,7 @@ public class Anagram {
 
         sc.close();
 
+
     }
     public static boolean isAnagram(String string1, String string2) {
 
@@ -40,12 +41,7 @@ public class Anagram {
         char[] array2 = string2.toCharArray();
         Arrays.sort(array1);
         Arrays.sort(array2);
-        for (int i = 0; i < array1.length; i++) {
-            if (array2[i] != array2[i]) {
-                return false;
-            }
-        }
-        return true;
+        return Arrays.equals(array1,array2);
     }
 
 

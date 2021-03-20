@@ -14,7 +14,7 @@ public class DuplicateWord {
         Map<String, Integer> duplicateWord = new HashMap<>();
         String st = "Java is a programming Language. Java is also an Island of Indonesia. Java is widely used language";
         String st1 = st.toLowerCase();
-        String[] stringWords = st1.split("\\W+");
+        String[] stringWords = st1.split(" +");
 
 
         for (String str : stringWords) {

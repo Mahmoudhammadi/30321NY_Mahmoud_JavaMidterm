@@ -29,7 +29,7 @@ public class Palindrome {
     }
     public static boolean isPalindrome(String string) {
         String reverse = "";
-        for (int i = 0; i < string.toLowerCase().length(); i++) {
+        for (int i = 0; i < string.length(); i++) {
             reverse = string.charAt(i) + reverse.toLowerCase();
         }
         if (string.toLowerCase().equals(reverse)) {

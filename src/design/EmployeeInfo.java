@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo extends AbstractClass implements Employee    {
+public class EmployeeInfo extends AbstractClass implements Employee {
 
     /*
     This class should implement the Employee interface. You can do that by directly implementing it, however you must

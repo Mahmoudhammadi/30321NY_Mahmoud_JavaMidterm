@@ -1,5 +1,6 @@
 package databases;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,9 +25,9 @@ public class ConnectToSqlDB {
 
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream("src/secret.properties");
-        prop.load(ism);
-        ism.close();
+        File file = new File("src/secret.properties");
+        FileInputStream fis = new FileInputStream(file);
+        prop.load(fis);
         return prop;
     }
 
@@ -47,7 +48,7 @@ public class ConnectToSqlDB {
         User user = null;
         try {
             Connection conn = connectToSqlDatabase();
-            String query = "SELECT * FROM Students";
+            String query = "SELECT * FROM Test_schema_1.test";
             // create the java statement
             Statement st = conn.createStatement();
             // execute the query, and get a java resultset
@@ -75,9 +76,11 @@ public class ConnectToSqlDB {
         for (User user : list) {
             System.out.println(user.getStName() + " " + user.getStID() + " " + user.getStDOB());
         }
+
+
     }
 
-    public List<String> readDataBase(String tableName, String columnName) throws Exception {
+    public  List<String> readDataBase(String tableName, String columnName) throws Exception {
         List<String> data = new ArrayList<String>();
 
         try {

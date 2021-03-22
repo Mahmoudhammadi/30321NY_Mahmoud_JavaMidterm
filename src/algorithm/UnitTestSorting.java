@@ -3,6 +3,8 @@ package algorithm;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 public class UnitTestSorting {
@@ -30,6 +32,15 @@ public class UnitTestSorting {
         }
 
         // Implement Unit test for rest of the sorting algorithms below
+
+          sort.bubbleSort(unSortedArray);
+          System.out.println(Arrays.toString(unSortedArray));
+          sort.mergeSort(unSortedArray,6);
+          System.out.println(Arrays.toString(unSortedArray));
+          sort.quickSort(sortedArray,0,6);
+          System.out.println(Arrays.toString(unSortedArray));
+          sort.shellSort(unSortedArray);
+          System.out.println(Arrays.toString(unSortedArray));
 
     }
 }

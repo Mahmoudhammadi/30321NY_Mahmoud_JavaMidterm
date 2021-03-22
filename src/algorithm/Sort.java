@@ -67,9 +67,17 @@ public class Sort {
 
         return array;
     }
+//public void bubbleSort(int[] a) {
+//        boolean sorted = false;
+//        int temp;
+//        while (!sorted) { sorted = true;
+//        for (int i = 0; i < a.length - 1; i++)
+//        { if (a[i] > a[i+1]) { temp = a[i];
+//        a[i] = a[i+1]; a[i+1] = temp;
+//        sorted = false; } } } }
 
 
-    public int [] mergeSort(int [] array, int n){
+    public int [] mergeSort(int [] array,int n){
 
         if (n < 2) {
             return array;

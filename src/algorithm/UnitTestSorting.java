@@ -1,6 +1,9 @@
 package algorithm;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 public class UnitTestSorting {
 
@@ -16,6 +19,8 @@ public class UnitTestSorting {
 
         // Pass the unsorted array to selectionSort() method from Sort class
         sort.selectionSort(unSortedArray);
+
+
 
         // Verify if the unsorted array is sorted by the selectionSort() method
         try {

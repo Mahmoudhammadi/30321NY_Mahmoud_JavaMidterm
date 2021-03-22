@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import databases.ConnectToSqlDB;
 import org.xml.sax.SAXException;
 
 
@@ -40,6 +41,8 @@ public class ProcessStudentInfo {
         String pathSelenium = System.getProperty("user.dir") + "/src/parser/selenium.xml";
         String pathQtp = System.getProperty("user.dir") + "/src/parser/qtp.xml";
         String tag = "id";
+
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
         //Declare a Map with List<String> into it.
         Map<String, List<Student>> list = new LinkedHashMap<String, List<Student>>();

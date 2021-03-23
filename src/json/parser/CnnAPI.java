@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CnnAPI {
     /*
@@ -46,12 +48,47 @@ public class CnnAPI {
      */
 
     public static void main(String[] args) throws IOException, JSONException {
-        String apiKey = "9c66701b5f2b46d8bca3ad6ceb22f5e2";
-        String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
+//        String apiKey = "9c66701b5f2b46d8bca3ad6ceb22f5e2";
+//        String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
+//
+//        JSONObject rootObject = new JSONObject(new String(Files.readAllBytes(new File("src/json/parser/data.json").toPath())));
+//        rootObject.getJSONArray(URL);
 
-        JSONObject rootObject = new JSONObject(new String(Files.readAllBytes(new File("src/json/parser/data.json").toPath())));
+
 
         // Continue implementing here..
+        Employee e1 = new Employee("mrahman@gmail.com" ,"Matiur Rahman" ,"400k" ,"Finance");
+        Employee e2 = new Employee("mrahman@gmail.com" ,"Rohan Rahman" ,"100k", "Engineering");
+        Employee e3 = new Employee("kafil@gmail.com" ,"Kafil", "200k" ,"Backend End Team");
+        Employee e4 = new Employee( "Dave@gmail.com" ,"David Lenard" ,"140k" ,"Engineering");
+        Employee e5 = new Employee( "rivera@gmail.com", "Rivera Dupp" ,"150k", "Finance");
+        Employee e6 = new Employee("Anand@gmail.com", "Anand Thakkar", "120k" ,"SDET");
+        Employee e7 = new Employee("sumay@gmail.com" ,"Sumaya Akbar", "200k" ,"Finance");
+        Employee e8 = new Employee("mrahman@gmail.com" ,"Mizanur Rahman" ,"400k" ,"Finance");
+        Employee e9 = new Employee("mrahman2@gmail.com" ,"Mizanur Rahman" ,"405k", "Finance");
+        Employee e10 = new Employee("mdtaque@gmail.com" ,"rifat taque" ,"400k" ,"QA");
+        Employee e11 = new Employee("mdtaque@gmail.com" ,"rifat taque" ,"400k" ,"QA");
+        ArrayList<Employee> news = new ArrayList<>();
+        news.add(e1);
+        news.add(e2);
+        news.add(e3);
+        news.add(e4);
+        news.add(e5);
+        news.add(e6);
+        news.add(e7);
+        news.add(e8);
+        news.add(e9);
+        news.add(e10);
+        news.add(e11);
+
+        Iterator it = news.iterator();
+
+        while (it.hasNext()){
+            Employee em = (Employee) it.next();
+            System.out.println(em.getEmpEmail()+" "+em.getEmpName()+" "+em.getSalary()+" "+em.getDepartment());
+        }
+
+
 
     }
 

@@ -13,31 +13,33 @@ public class UseQueue {
          *
          * Store and retrieve data from/to a database table.
          */
-        Queue<String> iceCreamLine = new LinkedList<>();
+        Queue<String> mahmoud = new LinkedList<>();
         //add data into the queue
-        iceCreamLine.add("Mahmoud");
-        iceCreamLine.add("john");
-        iceCreamLine.add("jason");
-        iceCreamLine.add("Erick");
-        iceCreamLine.add("jeff");
+        mahmoud.add("Mahmoud");
+        mahmoud.add("john");
+        mahmoud.add("jason");
+        mahmoud.add("Erick");
+        mahmoud.add("jeff");
+        mahmoud.peek();
+        mahmoud.poll();
 
         //Peek Data From the queue
 
-        System.out.println("peek: " + " " + iceCreamLine.peek());
+        System.out.println("peek: " + " " + mahmoud.peek());
 
         //remove data from the queue
-        System.out.println("Remove:" + " " + iceCreamLine.remove());
+        System.out.println("Remove:" + " " + mahmoud.remove());
         // pool
-        System.out.println("pool:" + " " + iceCreamLine.poll());
+        System.out.println("pool:" + " " + mahmoud.poll());
 
         // Using for each loop
 
-        for (String s : iceCreamLine) {
+        for (String s : mahmoud) {
             System.out.print(s + " ");
         }
         //using Iterator
         System.out.println("\n"+"using Iterator:");
-        Iterator iterator = iceCreamLine.iterator();
+        Iterator iterator = mahmoud.iterator();
         while (iterator.hasNext()) {
             System.out.print(iterator.next()+" ");
         }

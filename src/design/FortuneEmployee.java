@@ -23,7 +23,7 @@ public class FortuneEmployee {
         ConnectToSqlDB dt = new ConnectToSqlDB();
 //        dt.readDataBase("test","stName");
 //        dt.directDatabaseQueryExecute("select* from test","stID");
-        ConnectToSqlDB.readUserProfileFromSqlTable();
+        //ConnectToSqlDB.readUserProfileFromSqlTable();
 
 
 
